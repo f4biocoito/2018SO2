@@ -1,4 +1,8 @@
 
+#define UNICODE
+#define _UNICODE
+
+
 #include "header_dll.h"
 
 LPCTSTR nMemory = { TEXT("Nome da Memoria Partilhada") };
