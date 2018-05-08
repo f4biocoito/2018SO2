@@ -4,10 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server", "server\server.vcxproj", "{2DA9A89D-27F4-41D7-80EB-84690D704377}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C987136B-2A51-4F67-B6B2-184C644DE055} = {C987136B-2A51-4F67-B6B2-184C644DE055}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dll", "dll\dll.vcxproj", "{C987136B-2A51-4F67-B6B2-184C644DE055}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gateway", "gateway\gateway.vcxproj", "{51CA64EA-2096-4AA6-ACAA-B7A9D9EA61B8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C987136B-2A51-4F67-B6B2-184C644DE055} = {C987136B-2A51-4F67-B6B2-184C644DE055}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
