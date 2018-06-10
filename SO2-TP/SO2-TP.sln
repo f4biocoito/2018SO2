@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gateway", "gateway\gateway.
 		{C987136B-2A51-4F67-B6B2-184C644DE055} = {C987136B-2A51-4F67-B6B2-184C644DE055}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SERVERwin32", "SERVERwin32\SERVERwin32.vcxproj", "{AE22B8CD-F4A2-41E2-8C26-A2BA388FDD04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -47,6 +49,14 @@ Global
 		{51CA64EA-2096-4AA6-ACAA-B7A9D9EA61B8}.Release|x64.Build.0 = Release|x64
 		{51CA64EA-2096-4AA6-ACAA-B7A9D9EA61B8}.Release|x86.ActiveCfg = Release|Win32
 		{51CA64EA-2096-4AA6-ACAA-B7A9D9EA61B8}.Release|x86.Build.0 = Release|Win32
+		{AE22B8CD-F4A2-41E2-8C26-A2BA388FDD04}.Debug|x64.ActiveCfg = Debug|x64
+		{AE22B8CD-F4A2-41E2-8C26-A2BA388FDD04}.Debug|x64.Build.0 = Debug|x64
+		{AE22B8CD-F4A2-41E2-8C26-A2BA388FDD04}.Debug|x86.ActiveCfg = Debug|Win32
+		{AE22B8CD-F4A2-41E2-8C26-A2BA388FDD04}.Debug|x86.Build.0 = Debug|Win32
+		{AE22B8CD-F4A2-41E2-8C26-A2BA388FDD04}.Release|x64.ActiveCfg = Release|x64
+		{AE22B8CD-F4A2-41E2-8C26-A2BA388FDD04}.Release|x64.Build.0 = Release|x64
+		{AE22B8CD-F4A2-41E2-8C26-A2BA388FDD04}.Release|x86.ActiveCfg = Release|Win32
+		{AE22B8CD-F4A2-41E2-8C26-A2BA388FDD04}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
