@@ -5,7 +5,6 @@
 
 #define IDI_ICON_taskbar                101
 #define IDI_ICON_window                 102
-#define IDR_MENU                        103
 #define IDR_MENU_janela                 103
 #define IDD_DIALOG_setup                104
 #define IDC_SLIDER1                     1001

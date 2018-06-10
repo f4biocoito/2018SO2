@@ -1,10 +1,10 @@
-#include <windows.h>
-#include <tchar.h>
+
+
+
 
 #include "resource.h"
 
-LRESULT CALLBACK TrataEventos(HWND, UINT, WPARAM, LPARAM);
-LRESULT CALLBACK DialogProc(HWND, UINT, WPARAM, LPARAM);
+#include "SERVERwin32_header.h"
 
 TCHAR NomePrograma[] = TEXT("SERVERwin32");
 
@@ -14,6 +14,11 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 	MSG lpMsg; 
 	MSG lpMsgDlg;
 	WNDCLASSEX wcApp;
+
+#ifdef UNICODE
+	_setmode(_fileno(stdin), _O_WTEXT);
+	_setmode(_fileno(stdout), _O_WTEXT);
+#endif
 
 	wcApp.cbSize = sizeof(WNDCLASSEX); 
 	wcApp.hInstance = hInst; 
@@ -31,7 +36,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 	if (!RegisterClassEx(&wcApp))
 		return(0);
 	
-	hWnd = CreateWindowW(NomePrograma,TEXT("Server Console"),WS_OVERLAPPEDWINDOW, 
+	hWnd = CreateWindow(NomePrograma,TEXT("Server Console"),WS_OVERLAPPEDWINDOW, 
 		CW_USEDEFAULT, CW_USEDEFAULT,1280, 720,(HWND)HWND_DESKTOP, 
 		(HMENU)LoadMenu(hInst, MAKEINTRESOURCE(IDR_MENU_janela)),
 		(HINSTANCE)hInst, 0); 
@@ -39,7 +44,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 	ShowWindow(hWnd, nCmdShow); 
 	UpdateWindow(hWnd);
 
-	hDlg = CreateDialogParam(hInst, MAKEINTRESOURCE(IDD_DIALOG_setup), 0, DialogProc, 0);
+	hDlg = CreateDialogParamW(hInst, MAKEINTRESOURCE(IDD_DIALOG_setup), 0, DialogProc, 0);
 	ShowWindow(hDlg, nCmdShow);
 
 	while ((GetMessage(&lpMsgDlg, NULL, 0, 0))) {
@@ -53,35 +58,4 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 	}
 	
 	return((int)lpMsg.wParam); 
-}
-
-LRESULT CALLBACK TrataEventos(HWND hWnd, UINT messg, WPARAM wParam, LPARAM lParam) {
-	switch (messg) {
-	case WM_DESTROY: 
-		PostQuitMessage(0);
-		break;
-	case WM_CLOSE:
-		if (MessageBox(hWnd,TEXT("Sair do Servidor?"), TEXT("Pretende Sair"),MB_ICONQUESTION | MB_YESNO) == IDYES){
-			DestroyWindow(hWnd);
-		}
-		return (0);
-	default:
-
-		return(DefWindowProc(hWnd, messg, wParam, lParam));
-		break;
-	}
-	return(0);
-}
-
-LRESULT CALLBACK DialogProc(HWND hWnd, UINT messg, WPARAM wParam, LPARAM lParam){
-	switch (messg) {
-	case WM_DESTROY: 
-		PostQuitMessage(0);
-		break;
-	default:
-
-		return(DefWindowProc(hWnd, messg, wParam, lParam));
-		break;
-	}
-	return(0);
 }
