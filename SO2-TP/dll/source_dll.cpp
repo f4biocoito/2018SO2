@@ -15,6 +15,10 @@ LPCTSTR nMemory = { TEXT("Nome da Memoria Partilhada") };
 //LPCTSTR MutexMem = { TEXT("Mutex Mem") };
 
 
+
+
+
+
 void gotoxy(int x, int y)
 {
 	static HANDLE hStdout = NULL;

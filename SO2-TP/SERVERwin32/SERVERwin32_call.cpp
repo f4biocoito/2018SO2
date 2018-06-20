@@ -39,6 +39,23 @@ LRESULT CALLBACK DialogProc(HWND hWnd, UINT messg, WPARAM wParam, LPARAM lParam)
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		break;
+
+	case WM_CLOSE:
+		
+			DestroyWindow(hWnd);
+		
+		break;
+
+	case WM_KEYDOWN:
+		switch (wParam) {
+		case IDCANCEL: //Cancel
+			DestroyWindow(hWnd);
+			break;
+
+		default:
+			break;
+		}
+
 	default:
 
 		return(DefWindowProc(hWnd, messg, wParam, lParam));

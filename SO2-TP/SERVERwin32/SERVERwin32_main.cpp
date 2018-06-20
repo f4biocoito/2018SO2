@@ -1,7 +1,4 @@
 
-
-
-
 #include "resource.h"
 
 #include "SERVERwin32_header.h"
@@ -20,6 +17,14 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 	_setmode(_fileno(stdout), _O_WTEXT);
 #endif
 
+	Game jogo;
+	
+	TCHAR exeGateway[StrTam] = TEXT("..\\x64\\Debug\\GATEWAYconsole.exe");
+
+	if (criarProcesso(exeGateway)==1) {
+		return(1);
+	}
+	
 	wcApp.cbSize = sizeof(WNDCLASSEX); 
 	wcApp.hInstance = hInst; 
 	wcApp.lpszClassName = NomePrograma;
@@ -33,8 +38,9 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 	wcApp.cbWndExtra = 0; 
 	wcApp.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 	
-	if (!RegisterClassEx(&wcApp))
-		return(0);
+	if (!RegisterClassEx(&wcApp)) {
+		return(1);
+	}
 	
 	hWnd = CreateWindow(NomePrograma,TEXT("Server Console"),WS_OVERLAPPEDWINDOW, 
 		CW_USEDEFAULT, CW_USEDEFAULT,1280, 720,(HWND)HWND_DESKTOP, 

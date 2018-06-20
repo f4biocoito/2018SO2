@@ -15,7 +15,9 @@
 #define DLL_IMP_API __declspec(dllimport)
 #endif
 
-//#define MIN_FIELD_X 20
+#define IN_FIELD_X 20
+#define IN_FIELD_Y 22
+#define STR_SIZE 10
 
 
 extern "C"
@@ -23,6 +25,24 @@ extern "C"
 	//Variáveis globais da DLL
 	extern DLL_IMP_API LPCTSTR nMemory;
 
+	struct DLL_IMP_API Game {
+		int sizex = IN_FIELD_X;
+		int sizey = IN_FIELD_X;
+
+	};
+
+	struct DLL_IMP_API Player {
+		int pontuacao;
+		TCHAR nome[STR_SIZE];
+		int posx;
+		int posy;
+		int rapidez;
+		int poder;
+
+	};
+
+
+	DLL_IMP_API typedef struct Player player;
 
 	//Funções a serem exportadas/importadas
 	DLL_IMP_API void gotoxy(int x, int y);
