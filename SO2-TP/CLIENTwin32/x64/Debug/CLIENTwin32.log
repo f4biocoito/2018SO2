@@ -1,1 +1,5 @@
-﻿  CLIENTwin32.vcxproj -> C:\2018SO2\SO2-TP\x64\Debug\CLIENTwin32.exe
+﻿  CLIENTwin32_call.cpp
+  CLIENTwin32_main.cpp
+  CLIENTwin32_threads.cpp
+  Generating Code...
+  CLIENTwin32.vcxproj -> C:\2018SO2\SO2-TP\x64\Debug\CLIENTwin32.exe

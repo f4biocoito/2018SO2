@@ -1,27 +1,11 @@
 
-
-
-
 #include "header_dll.h"
-
-LPCTSTR nMemory = { TEXT("Nome da Memoria Partilhada") };
-
-//LPCTSTR nWriteMemory = { TEXT("Pode Escrever Memoria") };
-//LPCTSTR nReadMemory = { TEXT("Pode Ler Memoria") };
-
-//LPCTSTR EventoPergunta = { TEXT("EventoPergunta") };
-//LPCTSTR EventoResposta = { TEXT("EventoResposta") };
-
-//LPCTSTR MutexMem = { TEXT("Mutex Mem") };
 
 
 TCHAR NomeMemoria[] = TEXT("Nome da Memória Partilhada");
 TCHAR NomeSemaforoPodeEscrever[] = TEXT("Semáforo Pode Escrever");
 TCHAR NomeSemaforoPodeLer[] = TEXT("Semáforo Pode Ler");
 TCHAR NomeMutexEscritor[] = TEXT("Mutex escritor");
-
-
-
 
 void gotoxy(int x, int y)
 {
