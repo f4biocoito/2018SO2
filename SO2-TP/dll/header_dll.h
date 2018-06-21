@@ -66,7 +66,9 @@ extern "C"
 
 
 	TCHAR DLL_IMP_API Num_jogadores[2];
+	TCHAR DLL_IMP_API Nome_jogador[10];
 	HINSTANCE DLL_IMP_API hInstancia;
+	HINSTANCE DLL_IMP_API hInstCli;
 
 
 	//DLL_IMP_API typedef struct Player player;

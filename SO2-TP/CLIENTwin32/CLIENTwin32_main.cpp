@@ -26,6 +26,8 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 	if (!RegisterClassEx(&wcApp))
 		return(0);
 
+	hInstCli = hInst;
+
 	hWnd = CreateWindow(NomePrograma, TEXT("Jogo"), WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT, CW_USEDEFAULT, 1280, 720, (HWND)HWND_DESKTOP,
 		(HMENU)LoadMenu(hInst, MAKEINTRESOURCE(IDR_MENU_janela)),
@@ -41,3 +43,4 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 
 	return((int)lpMsg.wParam);
 }
+
