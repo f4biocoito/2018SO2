@@ -11,3 +11,9 @@
 #include <stdio.h>
 #include <time.h>
 
+DWORD WINAPI traduz(LPVOID param);
+
+struct handlesGT {
+	HANDLE mem;
+	HANDLE pip;
+};

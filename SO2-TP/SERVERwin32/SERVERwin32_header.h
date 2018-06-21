@@ -25,3 +25,4 @@ LRESULT CALLBACK DialogInfo(HWND, UINT, WPARAM, LPARAM);
 
 int criarProcesso(TCHAR * exeGateway);
 
+DWORD WINAPI Gerir(LPVOID param);

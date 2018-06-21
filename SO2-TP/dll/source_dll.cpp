@@ -15,6 +15,10 @@ LPCTSTR nMemory = { TEXT("Nome da Memoria Partilhada") };
 //LPCTSTR MutexMem = { TEXT("Mutex Mem") };
 
 
+TCHAR NomeMemoria[] = TEXT("Nome da Memória Partilhada");
+TCHAR NomeSemaforoPodeEscrever[] = TEXT("Semáforo Pode Escrever");
+TCHAR NomeSemaforoPodeLer[] = TEXT("Semáforo Pode Ler");
+TCHAR NomeMutexEscritor[] = TEXT("Mutex escritor");
 
 
 

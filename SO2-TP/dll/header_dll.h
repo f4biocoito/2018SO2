@@ -18,12 +18,22 @@
 #define IN_FIELD_X 20
 #define IN_FIELD_Y 22
 #define STR_SIZE 10
+#define BufferSize 100
+#define Buffers 10
 
 
 extern "C"
 {
 	//Variáveis globais da DLL
 	extern DLL_IMP_API LPCTSTR nMemory;
+
+
+	extern DLL_IMP_API TCHAR NomeMemoria[];
+	extern DLL_IMP_API TCHAR NomeSemaforoPodeEscrever[];
+	extern DLL_IMP_API TCHAR NomeSemaforoPodeLer[];
+	extern DLL_IMP_API TCHAR NomeMutexEscritor[];
+
+
 
 	struct DLL_IMP_API Game {
 		int sizex = IN_FIELD_X;
@@ -40,6 +50,19 @@ extern "C"
 		int poder;
 
 	};
+
+
+	HANDLE DLL_IMP_API PodeEscrever;
+	HANDLE DLL_IMP_API PodeLer;
+	HANDLE DLL_IMP_API hMemoria;
+	HANDLE DLL_IMP_API hMutexE;
+
+	struct DLL_IMP_API DADOS {
+		TCHAR PtrMemoria[Buffers][BufferSize];
+		int posLeitura, posEscrita;
+	};
+
+
 
 
 	TCHAR DLL_IMP_API Num_jogadores[2];

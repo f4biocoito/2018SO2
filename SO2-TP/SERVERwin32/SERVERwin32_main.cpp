@@ -15,11 +15,13 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 	_setmode(_fileno(stdin), _O_WTEXT);
 	_setmode(_fileno(stdout), _O_WTEXT);
 #endif
-
+	hInstancia = hInst;
 	Game jogo;
 
+	HANDLE hT;
+	DWORD threadId;
+	hT = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Gerir, (LPVOID)&hInstancia, 0, &threadId);
 	
-	hInstancia = hInst;
 	
 	TCHAR exeGateway[StrTam] = TEXT("..\\x64\\Debug\\GATEWAYconsole.exe");
 
