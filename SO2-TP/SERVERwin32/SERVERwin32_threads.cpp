@@ -2,8 +2,6 @@
 #include "SERVERwin32_header.h"
 
 
-
-
 int criarProcesso(TCHAR * exeGateway) {
 
 	PROCESS_INFORMATION pi;

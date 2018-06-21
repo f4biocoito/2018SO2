@@ -1,7 +1,6 @@
 
-#include "resource.h"
-
 #include "SERVERwin32_header.h"
+
 
 TCHAR NomePrograma[] = TEXT("SERVERwin32");
 
@@ -18,6 +17,9 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 #endif
 
 	Game jogo;
+
+	
+	hInstancia = hInst;
 	
 	TCHAR exeGateway[StrTam] = TEXT("..\\x64\\Debug\\GATEWAYconsole.exe");
 
@@ -26,7 +28,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 	}
 	
 	wcApp.cbSize = sizeof(WNDCLASSEX); 
-	wcApp.hInstance = hInst; 
+	wcApp.hInstance = hInst;
 	wcApp.lpszClassName = NomePrograma;
 	wcApp.lpfnWndProc = TrataEventos; 
 	wcApp.style = CS_HREDRAW | CS_VREDRAW;
@@ -50,7 +52,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 	ShowWindow(hWnd, nCmdShow); 
 	UpdateWindow(hWnd);
 
-	hDlg = CreateDialogParamW(hInst, MAKEINTRESOURCE(IDD_DIALOG_setup), 0, DialogProc, 0);
+	hDlg = CreateDialogParam(hInst, MAKEINTRESOURCE(IDD_DIALOG_setup), 0, DialogSetup, 0);
 	ShowWindow(hDlg, nCmdShow);
 
 	while ((GetMessage(&lpMsgDlg, NULL, 0, 0))) {

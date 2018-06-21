@@ -42,7 +42,11 @@ extern "C"
 	};
 
 
-	DLL_IMP_API typedef struct Player player;
+	TCHAR DLL_IMP_API Num_jogadores[2];
+	HINSTANCE DLL_IMP_API hInstancia;
+
+
+	//DLL_IMP_API typedef struct Player player;
 
 	//Funções a serem exportadas/importadas
 	DLL_IMP_API void gotoxy(int x, int y);
